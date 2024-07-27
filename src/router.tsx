@@ -4,6 +4,11 @@ import NotFound404 from './components/NotFound404/NotFound404';
 import AddEmployee from './components/AddEmployee/AddEmployee';
 import EmployeeList from './components/EmployeeList/EmployeeList';
 import Header from './components/Header/Header';
+import { persistor, store } from './redux/store';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import React from 'react';
+import FormAddEmployee from './components/FormAddEmployee/FormAddEmployee';
 
 
 
@@ -21,7 +26,7 @@ const router = createBrowserRouter([
     children :[
       {
         path: "/",
-        element: <AddEmployee/>
+        element: <FormAddEmployee/>
       },
       {
         path: "/employee-list",
@@ -33,7 +38,13 @@ const router = createBrowserRouter([
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-
+  <React.StrictMode>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
       <RouterProvider router={router} /> 
+      </PersistGate>
+    </Provider>
+  </React.StrictMode>
+);
 
-)
+

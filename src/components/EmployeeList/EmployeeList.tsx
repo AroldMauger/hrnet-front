@@ -1,9 +1,15 @@
-import { FC } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 
-const EmployeeList: FC = () => {
+const EmployeeList: React.FC = () => {
+  const name = useSelector((state: RootState) => state.employee.name);
+
   return (
-    <div>EmployeeList</div>
-  )
-}
+    <div>
+      <p>Name: {name}</p>
+    </div>
+  );
+};
 
-export default EmployeeList
+export default EmployeeList;
