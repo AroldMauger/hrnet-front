@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import NotFound404 from './components/NotFound404/NotFound404';
-import AddEmployee from './components/AddEmployee/AddEmployee';
 import EmployeeList from './components/EmployeeList/EmployeeList';
 import Header from './components/Header/Header';
 import { persistor, store } from './redux/store';

@@ -1,0 +1,34 @@
+form {
+    width: 40%;
+    background-color: aqua;
+    padding:2rem;
+    border-radius: 25px;
+}
+
+.subcontainer {
+    display: flex;
+    gap:2rem;
+
+}
+
+.input-subcontainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+    input {
+        border: none;
+        border-bottom: 2px solid #ccc;
+        outline: none;
+        transition: border-bottom-color 0.3s ease-in-out;            
+        height: 30px;
+        width: 6rem;
+    }
+    input:focus {
+        border-bottom-color: #000; 
+    }
+}
+
+.one-lign-container input{
+    width: 100%;
+}

@@ -1,22 +1,40 @@
+// employeeSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface EmployeeState {
-  name: string;
+interface Employee {
+  firstName: string;
+  lastName: string;
+  dateOfBirth: string;
+  startDate: string;
+  street: string;
+  city: string;
+  state: string;
+  zipcode: string;
+  department: string;
 }
 
-const initialState: EmployeeState = {
-  name: '',
+export interface EmployeesState {
+  employees: Employee[];
+}
+
+const initialState: EmployeesState = {
+  employees: [],
 };
 
 const employeeSlice = createSlice({
   name: 'employee',
   initialState,
   reducers: {
-    setName(state, action: PayloadAction<string>) {
-      state.name = action.payload;
+    addEmployee(state, action: PayloadAction<Employee>) {
+      console.log('Current State:', state);
+      console.log('Action Payload:', action.payload);
+      if (!state.employees) {
+        state.employees = [];
+      }
+      state.employees.push(action.payload);
     },
   },
 });
 
-export const { setName } = employeeSlice.actions;
+export const { addEmployee } = employeeSlice.actions;
 export default employeeSlice.reducer;
