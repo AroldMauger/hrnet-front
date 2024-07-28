@@ -9,7 +9,7 @@ const Header: FC = () => {
     <header>
       {location.pathname === "/" ? (
         <>
-          <h1>HRNet</h1>
+          <img src="logo.png" />
           <NavLink to="/employee-list">View Current Employees</NavLink>
         </>
       ) : location.pathname === "/employee-list" ? (

@@ -56,8 +56,9 @@ const FormAddEmployee: React.FC = () => {
         {errors.startDate && <p>Start date is required</p>}
       </div>
 
-      <div>
-        <span>Address</span>
+      
+      <fieldset>
+        <legend>ADDRESS</legend>
         <div className='input-subcontainer one-lign-container'>
           <label>Street</label>
           <input type="text" {...register("street", { required: true, maxLength: 250 })} value={"4 ancienne route de Caen"}/>
@@ -84,7 +85,9 @@ const FormAddEmployee: React.FC = () => {
           <input type="number" {...register("zipcode", { required: true })} value={"9"}/>
           {errors.zipcode && <p>Zip code is required</p>}
         </div>
-        <div className='input-subcontainer one-lign-container'>
+       
+      </fieldset>
+      <div className='input-subcontainer one-lign-container'>
           <label>Department</label>
           <select {...register("department", { required: true })} value={"Sales"}>
             <option value="Sales">Sales</option>
@@ -93,9 +96,10 @@ const FormAddEmployee: React.FC = () => {
             <option value="Legal">Legal</option>
           </select>
         </div>
-      </div>
 
-      <input type="submit" />
+        <div className='submit-container'>
+            <input type="submit" value="Ajouter"/>
+        </div>
     </form>
   );
 }
