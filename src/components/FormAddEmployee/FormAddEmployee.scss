@@ -9,6 +9,7 @@ form {
     font-family: "Open Sans", sans-serif;
     color:white; 
     box-shadow: 5px 5px #5a6f09, 10px 10px #5a6f09;
+    margin-bottom: 100px;
 }
 
 .subcontainer {
@@ -50,9 +51,10 @@ form {
 fieldset {
     display: block;
     margin-left:-30px;
+    margin-right: 5em;
     padding-block-start: 1em;
     padding-inline-start: 1.5em;
-    padding-inline-end: 0.75em;
+    padding-inline-end: 0em;
     padding-block-end: 0em; 
     min-inline-size: min-content;
     border-width: 2px;
@@ -68,12 +70,24 @@ select {
     height: 30px;
     background-color: #ffffff;
     font-size: 14px;
-
 }
 
 select:hover, input:hover {
     cursor: pointer;
+    
 }
+
+.one-lign-container input {
+    color-scheme: white;
+
+}
+
+
+option:hover {
+    background-color: #93ad19;
+}
+
+
 
 .submit-container {
     width: 100%;
@@ -105,3 +119,49 @@ label, legend {
     margin-bottom: 6px;
     color:#37420c;
 }
+
+
+
+.styled-select {
+    .react-select__control {
+      width: 50%;
+      padding-inline: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: white;
+      color: white;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+  
+    .react-select__option {
+      padding: 10px;
+      background-color: #5a6f09;
+      color: white;
+  
+      &:hover {
+        background-color: #93ad19;
+        color: white;
+        cursor: pointer;
+      }
+  
+      &--is-focused {
+        background-color: #93ad19;
+        color: white;
+      }
+  
+      &--is-selected {
+        background-color: #93ad19;
+        color: white;
+      }
+    }
+  }
+  
+
+  .error-message {
+    color: rgb(133, 8, 8);
+    font-size: 14px;
+    margin-top: 5px;
+  }
