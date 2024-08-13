@@ -14,8 +14,8 @@ const Header: FC = () => {
         </>
       ) : location.pathname === "/employee-list" ? (
         <>
-          <h1>Current Employees</h1>
-          <NavLink to="/">Home</NavLink>
+        <img src="logo.png" />
+        <NavLink to="/">Home</NavLink>
         </>
       ) : null}
     </header>
