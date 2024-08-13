@@ -78,54 +78,60 @@ const FormAddEmployee: React.FC = () => {
         </div>
       </section>
 
-      <div className='input-subcontainer one-lign-container'>
-        <label>Date of Birth</label>
-        <input type="date" {...register("dateOfBirth", { required: true })} value={"1995-02-19"}/>
-        {errors.dateOfBirth && <p className='error-message'>Date of birth is required</p>}
-        {formErrors.dateOfBirth && <p className='error-message'>{formErrors.dateOfBirth}</p>}
-      </div>
-
-      <div className='input-subcontainer one-lign-container'>
-        <label>Start Date</label>
-        <input type="date" {...register("startDate", { required: true })} value={"2024-07-28"}/>
-        {errors.startDate && <p className='error-message'>Start date is required</p>}
-        {formErrors.startDate && <p className='error-message'>{formErrors.startDate}</p>}
-      </div>
+      <section className='subcontainer'>
+        <div className='input-subcontainer'>
+          <label>Date of Birth</label>
+          <input type="date" {...register("dateOfBirth", { required: true })} value={"1995-02-19"}/>
+          {errors.dateOfBirth && <p className='error-message'>Date of birth is required</p>}
+          {formErrors.dateOfBirth && <p className='error-message'>{formErrors.dateOfBirth}</p>}
+        </div>
+  
+        <div className='input-subcontainer'>
+          <label>Start Date</label>
+          <input type="date" {...register("startDate", { required: true })} value={"2024-07-28"}/>
+          {errors.startDate && <p className='error-message'>Start date is required</p>}
+          {formErrors.startDate && <p className='error-message'>{formErrors.startDate}</p>}
+        </div>
+      </section>
 
       <fieldset>
         <legend>ADDRESS</legend>
-        <div className='input-subcontainer one-lign-container'>
-          <label>Street</label>
-          <input type="text" {...register("street", { required: true, maxLength: 250 })} value={"4 ancienne route de Caen"}/>
-          {errors.street && <p className='error-message'>Street name is required</p>}
-          {formErrors.street && <p className='error-message'>{formErrors.street}</p>}
-        </div>
-        <div className='input-subcontainer one-lign-container'>
-          <label>City</label>
-          <input type="text" {...register("city", { required: true, maxLength: 250 })} value={"Cabourg"}/>
-          {errors.city && <p className='error-message'>City name is required</p>}
-          {formErrors.city && <p className='error-message'>{formErrors.city}</p>}
-        </div>
-        <div className='input-subcontainer one-lign-container'>
-          <label>State</label>
-          <Select 
-            options={states.map((state) => ({ value: state.abbreviation, label: state.name }))}
-            onChange={handleStateChange}
-            className="styled-select"
-            classNamePrefix="react-select"
-          />
-          {errors.state && <p className='error-message'>State is required</p>}
-          {formErrors.state && <p className='error-message'>{formErrors.state}</p>}
-        </div>
-        <div className='input-subcontainer one-lign-container'>
-          <label>Zip Code</label>
-          <input type="number" {...register("zipcode", { required: true })} value={"9"}/>
-          {errors.zipcode && <p className='error-message'>Zip code is required</p>}
-          {formErrors.zipcode && <p className='error-message'>{formErrors.zipcode}</p>}
-        </div>
+        <section className='subcontainer'>
+          <div className='input-subcontainer-address'>
+            <label>Street</label>
+            <input type="text" {...register("street", { required: true, maxLength: 250 })} value={"4 ancienne route de Caen"}/>
+            {errors.street && <p className='error-message'>Street name is required</p>}
+            {formErrors.street && <p className='error-message'>{formErrors.street}</p>}
+          </div>
+          <div className='input-subcontainer-address'>
+            <label>City</label>
+            <input type="text" {...register("city", { required: true, maxLength: 250 })} value={"Cabourg"}/>
+            {errors.city && <p className='error-message'>City name is required</p>}
+            {formErrors.city && <p className='error-message'>{formErrors.city}</p>}
+          </div>
+        </section>
+        <section className='subcontainer-address'>
+          <div className='input-subcontainer-react-selector'>
+            <label>State</label>
+            <Select 
+              options={states.map((state) => ({ value: state.abbreviation, label: state.name }))}
+              onChange={handleStateChange}
+              className="styled-select"
+              classNamePrefix="react-select"
+            />
+            {errors.state && <p className='error-message'>State is required</p>}
+            {formErrors.state && <p className='error-message'>{formErrors.state}</p>}
+          </div>
+          <div className='input-subcontainer-address'>
+            <label>Zip Code</label>
+            <input type="number" {...register("zipcode", { required: true })} value={"9"}/>
+            {errors.zipcode && <p className='error-message'>Zip code is required</p>}
+            {formErrors.zipcode && <p className='error-message'>{formErrors.zipcode}</p>}
+          </div>
+        </section>
       </fieldset>
       
-      <div className='input-subcontainer one-lign-container'>
+      <div className='input-subcontainer-react-selector'>
         <label>Department</label>
         <Select 
           options={[

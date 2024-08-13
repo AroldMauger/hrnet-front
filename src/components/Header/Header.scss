@@ -12,14 +12,16 @@ body {
 }
 
 img {
-    width: 36%;
+    width: 25%;
 }
 
 header {
     text-align: center;
     width: 50%;
     margin-bottom: 0px;
-    padding : 2rem;
+    padding-top : 1rem;
+    padding-bottom : 1rem;
+
     display: flex;
     flex-direction: row;
     align-items: center;
