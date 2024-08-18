@@ -4,7 +4,6 @@ import { RootState } from '../../redux/store';
 import DataTable, { TableColumn } from 'react-data-table-component';
 import "./EmployeeList.scss";
 
-// Définir un type pour les données des employés
 interface Employee {
   firstName: string;
   lastName: string;
@@ -18,54 +17,63 @@ interface Employee {
 }
 
 const EmployeeList: React.FC = () => {
-
-  // Définir les colonnes avec des types appropriés
+  
   const columns: TableColumn<Employee>[] = [
     {
       name: 'First Name',
-      cell: (employee: Employee) => employee.firstName,
-
+      selector: (employee: Employee) => employee.firstName,
+      sortable: true
     },
     {
       name: 'Last Name',
-      cell: (employee: Employee) => employee.lastName,
+      selector: (employee: Employee) => employee.lastName,
+      sortable: true
     },
     {
       name: 'Date of Birth',
-      cell: (employee: Employee) => employee.dateOfBirth,
+      selector: (employee: Employee) => employee.dateOfBirth,
+      sortable: true
     },
     {
       name: 'Start Date',
-      cell: (employee: Employee) => employee.startDate,
+      selector: (employee: Employee) => employee.startDate,
+      sortable: true
     },
     {
       name: 'Street',
-      cell: (employee: Employee) => employee.street,
+      selector: (employee: Employee) => employee.street,
       width: '230px', 
+      sortable: true
     },
     {
       name: 'City',
-      cell: (employee: Employee) => employee.city,
+      selector: (employee: Employee) => employee.city,
       width: '125px', 
+      sortable: true
     },
     {
       name: 'State',
-      cell: (employee: Employee) => employee.state,
+      selector: (employee: Employee) => employee.state,
       width: '102px', 
+      sortable: true
     },
     {
       name: 'Zip Code',
-      cell: (employee: Employee) => employee.zipcode,
+      selector: (employee: Employee) => employee.zipcode,
       width: '132px', 
+      sortable: true
     },
     {
       name: 'Department',
-      cell: (employee: Employee) => employee.department,
+      selector: (employee: Employee) => employee.department,
+      sortable: true
     },
   ];
 
   // Récupération de la liste des employés depuis le store
   const employees = useSelector((state: RootState) => state.employee.employees);
+
+
 
   if (!employees || employees.length === 0) {
     return <div>No employees found.</div>;
@@ -75,9 +83,11 @@ const EmployeeList: React.FC = () => {
     <div className='table-employees'>
       <h1>Current Employees</h1>
       <h2>Employee List</h2>
+    
       <DataTable
         columns={columns}
         data={employees}
+        pagination
       />
     </div>
   );
