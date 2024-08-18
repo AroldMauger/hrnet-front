@@ -17,6 +17,11 @@ form {
     
 }
 
+.subcontainer-fieldset {
+    display: flex;
+    gap:2rem;
+}
+
 .subcontainer-address {
     display: flex;
     gap:2rem;
@@ -100,7 +105,7 @@ fieldset {
     border-style: double;
     border-color: #5a6f09;
     border-image: initial;
-    margin-block: 2rem;
+    margin-block: 1rem;
 
 }
 
@@ -207,3 +212,67 @@ label, legend {
   }
 
  
+
+  @media screen and (min-width: 950px) and  (max-width: 1350px) {
+
+                
+        .subcontainer-fieldset, .subcontainer-address{
+            flex-direction: column;
+            gap:1em;
+        }
+
+        fieldset {
+            margin-right: 4em;
+        }
+    
+  }
+
+  
+  @media screen and (min-width: 640px) and (max-width: 950px) {
+
+                
+    .subcontainer-fieldset, .subcontainer-address{
+        flex-direction: column;
+        gap:1em;
+    }
+
+  
+
+    form {
+        width: 60%;
+    }
+
+}
+@media screen and (max-width: 640px) {
+
+    fieldset {
+        margin-right: 0px;
+         padding-inline-start: 0px;
+         padding-left: 0.6em;
+         margin-left: -44px;
+    }
+    .subcontainer {
+        flex-direction: column;
+        gap: 0px;
+    }
+    .subcontainer-fieldset, .subcontainer-address{
+        flex-direction: column;
+        gap:1em;
+    }
+    
+    form {
+        width: 68%;
+    }
+
+    .input-subcontainer-react-selector {
+   
+        width: 80%;
+
+    }
+
+    header {
+        width: 100%;
+    }
+
+}
+

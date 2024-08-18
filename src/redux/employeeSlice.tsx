@@ -33,8 +33,11 @@ const employeeSlice = createSlice({
       }
       state.employees.push(action.payload);
     },
+    clearStore: (state) => {
+      state.employees = [];
+    }
   },
 });
 
-export const { addEmployee } = employeeSlice.actions;
+export const { addEmployee, clearStore } = employeeSlice.actions;
 export default employeeSlice.reducer;

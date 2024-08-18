@@ -16,6 +16,8 @@ const rootReducer = combineReducers({
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+
+
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
@@ -25,6 +27,12 @@ export const store = configureStore({
       },
     }),
 });
+
+// Ajout de ces lignes pour clear le store avec la commande window.store.dispatch({ type: 'employee/clearStore' });
+
+if (typeof window !== 'undefined') {
+  (window as any).store = store;
+}
 
 export const persistor = persistStore(store);
 

@@ -72,7 +72,7 @@ const FormAddEmployee: React.FC = () => {
 
         <div className='input-subcontainer'>
           <label>Last Name</label>
-          <input type="text" {...register("lastName", { required: true, maxLength: 100 })} value={"MAUGER"} />
+          <input type="text" {...register("lastName", { required: true, maxLength: 100 })} />
           {errors.lastName && <p className='error-message'>Last name is required</p>}
           {formErrors.lastName && <p className='error-message'>{formErrors.lastName}</p>}
         </div>
@@ -81,14 +81,14 @@ const FormAddEmployee: React.FC = () => {
       <section className='subcontainer'>
         <div className='input-subcontainer'>
           <label>Date of Birth</label>
-          <input type="date" {...register("dateOfBirth", { required: true })} value={"1995-02-19"}/>
+          <input type="date" {...register("dateOfBirth", { required: true })} />
           {errors.dateOfBirth && <p className='error-message'>Date of birth is required</p>}
           {formErrors.dateOfBirth && <p className='error-message'>{formErrors.dateOfBirth}</p>}
         </div>
   
         <div className='input-subcontainer'>
           <label>Start Date</label>
-          <input type="date" {...register("startDate", { required: true })} value={"2024-07-28"}/>
+          <input type="date" {...register("startDate", { required: true })} />
           {errors.startDate && <p className='error-message'>Start date is required</p>}
           {formErrors.startDate && <p className='error-message'>{formErrors.startDate}</p>}
         </div>
@@ -96,16 +96,16 @@ const FormAddEmployee: React.FC = () => {
 
       <fieldset>
         <legend>ADDRESS</legend>
-        <section className='subcontainer'>
+        <section className='subcontainer-fieldset'>
           <div className='input-subcontainer-address'>
             <label>Street</label>
-            <input type="text" {...register("street", { required: true, maxLength: 250 })} value={"4 ancienne route de Caen"}/>
+            <input type="text" {...register("street", { required: true, maxLength: 250 })} />
             {errors.street && <p className='error-message'>Street name is required</p>}
             {formErrors.street && <p className='error-message'>{formErrors.street}</p>}
           </div>
           <div className='input-subcontainer-address'>
             <label>City</label>
-            <input type="text" {...register("city", { required: true, maxLength: 250 })} value={"Cabourg"}/>
+            <input type="text" {...register("city", { required: true, maxLength: 250 })} />
             {errors.city && <p className='error-message'>City name is required</p>}
             {formErrors.city && <p className='error-message'>{formErrors.city}</p>}
           </div>
@@ -124,7 +124,7 @@ const FormAddEmployee: React.FC = () => {
           </div>
           <div className='input-subcontainer-address'>
             <label>Zip Code</label>
-            <input type="number" {...register("zipcode", { required: true })} value={"9"}/>
+            <input type="number" {...register("zipcode", { required: true })} />
             {errors.zipcode && <p className='error-message'>Zip code is required</p>}
             {formErrors.zipcode && <p className='error-message'>{formErrors.zipcode}</p>}
           </div>

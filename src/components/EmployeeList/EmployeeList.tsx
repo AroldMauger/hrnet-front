@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import DataTable, { TableColumn } from 'react-data-table-component';
@@ -17,7 +17,8 @@ interface Employee {
 }
 
 const EmployeeList: React.FC = () => {
-  
+  const [filterText, setFilterText] = useState('');
+
   const columns: TableColumn<Employee>[] = [
     {
       name: 'First Name',
@@ -70,24 +71,42 @@ const EmployeeList: React.FC = () => {
     },
   ];
 
-  // Récupération de la liste des employés depuis le store
   const employees = useSelector((state: RootState) => state.employee.employees);
 
-
-
-  if (!employees || employees.length === 0) {
-    return <div>No employees found.</div>;
-  }
+  const filteredEmployees = employees.filter(employee => {
+    return (
+      employee.firstName.toLowerCase().includes(filterText.toLowerCase()) ||
+      employee.lastName.toLowerCase().includes(filterText.toLowerCase()) ||
+      employee.dateOfBirth.toLowerCase().includes(filterText.toLowerCase()) ||
+      employee.startDate.toLowerCase().includes(filterText.toLowerCase()) ||
+      employee.street.toLowerCase().includes(filterText.toLowerCase()) ||
+      employee.city.toLowerCase().includes(filterText.toLowerCase()) ||
+      employee.state.toLowerCase().includes(filterText.toLowerCase()) ||
+      employee.zipcode.toLowerCase().includes(filterText.toLowerCase()) ||
+      employee.department.toLowerCase().includes(filterText.toLowerCase())
+    );
+  });
 
   return (
     <div className='table-employees'>
       <h1>Current Employees</h1>
       <h2>Employee List</h2>
-    
+      <div className='filter-container'>
+        <input
+          className='input-filter'
+          type='text'
+          placeholder='Recherche'
+          value={filterText}
+          onChange={(e) => setFilterText(e.target.value)}
+        />
+      </div>
+     
+
       <DataTable
         columns={columns}
-        data={employees}
+        data={filteredEmployees}
         pagination
+        fixedHeader
       />
     </div>
   );
