@@ -15,7 +15,7 @@ h1  {
     font-size: 18px;
     font-weight: bolder;
     font-family: "Open Sans", sans-serif;
-    color:white; 
+    color:#333333;
     box-shadow: 5px 5px #5a6f09, 10px 10px #5a6f09;
 }
 
@@ -25,6 +25,8 @@ h1  {
     .filter-container {
       display: flex;
       justify-content: flex-end;
+      flex-direction: column;
+      align-items: end;
     }
 
     .input-filter {

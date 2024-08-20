@@ -73,15 +73,15 @@ const FormAddEmployee: React.FC = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <section className='subcontainer'>
         <div className='input-subcontainer'>
-          <label>First Name</label>
-          <input type="text" {...register("firstName", { required: true, maxLength: 80 })} />
+          <label htmlFor="first-n">First Name</label>
+          <input type="text" id="first-n" {...register("firstName", { required: true, maxLength: 80 })} />
           {errors.firstName && <p className='error-message'>First name is required</p>}
           {formErrors.firstName && <p className='error-message'>{formErrors.firstName}</p>}
         </div>
 
         <div className='input-subcontainer'>
-          <label>Last Name</label>
-          <input type="text" {...register("lastName", { required: true, maxLength: 100 })} />
+          <label htmlFor='last-n'>Last Name</label>
+          <input type="text" id="last-n" {...register("lastName", { required: true, maxLength: 100 })} />
           {errors.lastName && <p className='error-message'>Last name is required</p>}
           {formErrors.lastName && <p className='error-message'>{formErrors.lastName}</p>}
         </div>
@@ -89,15 +89,15 @@ const FormAddEmployee: React.FC = () => {
 
       <section className='subcontainer'>
         <div className='input-subcontainer'>
-          <label>Date of Birth</label>
-          <input type="date" {...register("dateOfBirth", { required: true })} />
+          <label htmlFor="birth-date">Date of Birth</label>
+          <input type="date" id="birth-date" {...register("dateOfBirth", { required: true })} />
           {errors.dateOfBirth && <p className='error-message'>Date of birth is required</p>}
           {formErrors.dateOfBirth && <p className='error-message'>{formErrors.dateOfBirth}</p>}
         </div>
   
         <div className='input-subcontainer'>
-          <label>Start Date</label>
-          <input type="date" {...register("startDate", { required: true })} />
+          <label htmlFor="start-date">Start Date</label>
+          <input type="date" id="start-date" {...register("startDate", { required: true })} />
           {errors.startDate && <p className='error-message'>Start date is required</p>}
           {formErrors.startDate && <p className='error-message'>{formErrors.startDate}</p>}
         </div>
@@ -107,23 +107,25 @@ const FormAddEmployee: React.FC = () => {
         <legend>ADDRESS</legend>
         <section className='subcontainer-fieldset'>
           <div className='input-subcontainer-address'>
-            <label>Street</label>
-            <input type="text" {...register("street", { required: true, maxLength: 250 })} />
+            <label htmlFor="street-n">Street</label>
+            <input type="text" id="street-n" {...register("street", { required: true, maxLength: 250 })} />
             {errors.street && <p className='error-message'>Street name is required</p>}
             {formErrors.street && <p className='error-message'>{formErrors.street}</p>}
           </div>
           <div className='input-subcontainer-address'>
-            <label>City</label>
-            <input type="text" {...register("city", { required: true, maxLength: 250 })} />
+            <label htmlFor="city-n">City</label>
+            <input type="text" id="city-n" {...register("city", { required: true, maxLength: 250 })} />
             {errors.city && <p className='error-message'>City name is required</p>}
             {formErrors.city && <p className='error-message'>{formErrors.city}</p>}
           </div>
         </section>
         <section className='subcontainer-address'>
           <div className='input-subcontainer-react-selector'>
-            <label>State</label>
+            <span>State</span>
             <SimpleReactSelector 
-              options={states.map(state => ({ value: state.abbreviation, label: state.name }))}
+              id="state-n" 
+               ariaLabel="Select State"
+              options={states.map(state => ({ value: state.abbreviation, label: state.name,  }))}
               onChange={handleStateChange}
               value={selectedStateOption}
               placeholder="Select State"
@@ -132,8 +134,8 @@ const FormAddEmployee: React.FC = () => {
             {formErrors.state && <p className='error-message'>{formErrors.state}</p>}
           </div>
           <div className='input-subcontainer-address'>
-            <label>Zip Code</label>
-            <input type="number" {...register("zipcode", { required: true })} />
+            <label htmlFor='zip-code'>Zip Code</label>
+            <input id="zip-code" type="number" {...register("zipcode", { required: true })} />
             {errors.zipcode && <p className='error-message'>Zip code is required</p>}
             {formErrors.zipcode && <p className='error-message'>{formErrors.zipcode}</p>}
           </div>
@@ -141,7 +143,7 @@ const FormAddEmployee: React.FC = () => {
       </fieldset>
       
       <div className='input-subcontainer-react-selector'>
-        <label>Department</label>
+        <span>Department</span>
         <SimpleReactSelector 
           options={[
             { value: 'Sales', label: 'Sales' },

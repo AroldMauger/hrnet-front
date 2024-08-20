@@ -92,7 +92,9 @@ const EmployeeList: React.FC = () => {
       <h1>Current Employees</h1>
       <h2>Employee List</h2>
       <div className='filter-container'>
+        <label htmlFor='filter'>Filtre</label>
         <input
+          id="filter"
           className='input-filter'
           type='text'
           placeholder='Recherche'

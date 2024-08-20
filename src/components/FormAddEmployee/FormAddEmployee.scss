@@ -11,6 +11,8 @@ form {
     box-shadow: 5px 5px #5a6f09, 10px 10px #5a6f09;
 }
 
+
+
 .subcontainer {
     display: flex;
     gap:2rem;
@@ -32,6 +34,7 @@ form {
     flex-direction: column;
     margin-bottom: 1rem;
     width: 45%;
+    gap:1em;
 }
 
 .input-subcontainer {
@@ -45,7 +48,7 @@ form {
         border: none;
         border-bottom: 2px solid #5a6f09;
         outline: none;
-        color:white;
+        color:#333333;
         transition: border-bottom-color 0.3s ease-in-out;            
         height: 26px;
         background-color: #93ad19;
@@ -72,7 +75,7 @@ form {
         border: none;
         border-bottom: 2px solid #5a6f09;
         outline: none;
-        color:white;
+        color:#333333;
         transition: border-bottom-color 0.3s ease-in-out;            
         height: 30px;
         background-color: #93ad19;
@@ -160,9 +163,9 @@ option:hover {
     border:none;
 }
 
-label, legend {
+label, legend, span, input {
     margin-bottom: 6px;
-    color:#37420c;
+    color:#333333;
 }
 
 
@@ -174,7 +177,7 @@ label, legend {
       border-radius: 5px;
       font-size: 16px;
       background-color: white;
-      color: white;
+      color:#333333;
       &:hover {
         cursor: pointer;
       }
@@ -199,8 +202,8 @@ label, legend {
   
       &--is-selected {
         background-color: #93ad19;
-        color: white;
-      }
+        color:#333333;
+    }
     }
   }
   
@@ -276,3 +279,56 @@ label, legend {
 
 }
 
+
+
+/* SimpleReactSelector.css */
+.custom-selector {
+    position: relative;
+    width: 90%;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .custom-selector__selected {
+    display: inline-block;
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    cursor: pointer;
+    color:#333333;
+  }
+  
+  .custom-selector__options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+#start-date, #birth-date {
+    color:#333333;
+}
+
+  .custom-selector__option {
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .custom-selector__option:hover {
+    background-color: #93ad19;
+    color:#333333;
+  }
+  
