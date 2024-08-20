@@ -4,8 +4,9 @@ import { useDispatch } from 'react-redux';
 import { addEmployee } from '../../redux/employeeSlice';
 import { states } from "../../data/states";
 import { AppDispatch } from '../../redux/store';
-import Select from 'react-select';
-import "./FormAddEmployee.scss"
+import { SimpleReactSelector } from 'simple-react-selector';
+
+import "./FormAddEmployee.scss";
 
 interface IFormInput {
   firstName: string;
@@ -32,12 +33,12 @@ const FormAddEmployee: React.FC = () => {
     }
   };
 
-  const handleStateChange = (selectedOption: any) => {
-    setValue('state', selectedOption?.value || '');
-    setFormErrors((prevErrors) => ({ ...prevErrors, state: '' }));
+  const handleStateChange = (selectedOption: { value: string, label: string } | null) => {
+    setValue('state', selectedOption?.value || ''); // Met à jour le state du formulaire
+    setFormErrors((prevErrors) => ({ ...prevErrors, state: '' })); // Réinitialise l'erreur pour le champ state
   };
 
-  const handleDepartmentChange = (selectedOption: any) => {
+  const handleDepartmentChange = (selectedOption: { value: string, label: string } | null) => {
     setValue('department', selectedOption?.value || '');
     setFormErrors((prevErrors) => ({ ...prevErrors, department: '' }));
   };
@@ -59,6 +60,14 @@ const FormAddEmployee: React.FC = () => {
     setFormErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+
+  const selectedState = states.find(state => state.abbreviation === getValues('state'));
+  const selectedStateOption = selectedState ? { value: selectedState.abbreviation, label: selectedState.name } : null;
+
+  const departmentValue = getValues('department');
+  const selectedDepartmentOption = departmentValue
+    ? { value: departmentValue, label: departmentValue }
+    : null;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -113,11 +122,11 @@ const FormAddEmployee: React.FC = () => {
         <section className='subcontainer-address'>
           <div className='input-subcontainer-react-selector'>
             <label>State</label>
-            <Select 
-              options={states.map((state) => ({ value: state.abbreviation, label: state.name }))}
+            <SimpleReactSelector 
+              options={states.map(state => ({ value: state.abbreviation, label: state.name }))}
               onChange={handleStateChange}
-              className="styled-select"
-              classNamePrefix="react-select"
+              value={selectedStateOption}
+              placeholder="Select State"
             />
             {errors.state && <p className='error-message'>State is required</p>}
             {formErrors.state && <p className='error-message'>{formErrors.state}</p>}
@@ -133,7 +142,7 @@ const FormAddEmployee: React.FC = () => {
       
       <div className='input-subcontainer-react-selector'>
         <label>Department</label>
-        <Select 
+        <SimpleReactSelector 
           options={[
             { value: 'Sales', label: 'Sales' },
             { value: 'Engineering', label: 'Engineering' },
@@ -141,15 +150,15 @@ const FormAddEmployee: React.FC = () => {
             { value: 'Legal', label: 'Legal' }
           ]}
           onChange={handleDepartmentChange}
-          className="styled-select"
-          classNamePrefix="react-select"
+          value={selectedDepartmentOption}
+          placeholder="Select Department"
         />
         {errors.department && <p className='error-message'>Department is required</p>}
         {formErrors.department && <p className='error-message'>{formErrors.department}</p>}
       </div>
 
       <div className='submit-container'>
-        <input type="submit" value="Ajouter"/>
+        <input type="submit" value="Add"/>
       </div>
     </form>
   );

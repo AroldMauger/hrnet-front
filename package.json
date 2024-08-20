@@ -21,7 +21,8 @@
     "react-select": "^5.8.0",
     "redux": "^5.0.1",
     "redux-persist": "^6.0.0",
-    "sass": "^1.77.8"
+    "sass": "^1.77.8",
+    "simple-react-selector": "^1.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
