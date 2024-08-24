@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { addEmployee } from '../../redux/employeeSlice';
 import { states } from "../../data/states";
 import { AppDispatch } from '../../redux/store';
-import { SimpleReactSelector } from 'simple-react-selector';
+import { SimpleReactSelector } from 'react-selector-by-ar-mauger';
 
 import "./FormAddEmployee.scss";
 
@@ -124,7 +124,6 @@ const FormAddEmployee: React.FC = () => {
             <span>State</span>
             <SimpleReactSelector 
               id="state-n" 
-               ariaLabel="Select State"
               options={states.map(state => ({ value: state.abbreviation, label: state.name,  }))}
               onChange={handleStateChange}
               value={selectedStateOption}
