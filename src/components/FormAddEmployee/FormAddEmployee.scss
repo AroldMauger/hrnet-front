@@ -1,6 +1,6 @@
 form {
     width: 42%;
-    background-color: #93ad19;
+    background-color: white;
     padding:1.4rem;
     padding-left: 4rem;
     border-radius: 25px;
@@ -8,7 +8,7 @@ form {
     font-weight: bolder;
     font-family: "Open Sans", sans-serif;
     color:white; 
-    box-shadow: 5px 5px #5a6f09, 10px 10px #5a6f09;
+    box-shadow: 5px 5px 5px 5px #5a6f09, 10px 10px 10px 10px #5a6f09;
 }
 
 
@@ -32,7 +32,7 @@ form {
 .input-subcontainer-react-selector {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     width: 45%;
     gap:1em;
 }
@@ -40,18 +40,19 @@ form {
 .input-subcontainer {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
 
 
 
     input {
+        border-radius: 4px;
         border: none;
         border-bottom: 2px solid #5a6f09;
         outline: none;
-        color:#333333;
+        color:#93ad19;
         transition: border-bottom-color 0.3s ease-in-out;            
         height: 26px;
-        background-color: #93ad19;
+        background-color: white;
         font-size: 18px;
         color-scheme: dark;
         font-weight: 700;
@@ -72,13 +73,14 @@ form {
 
 
     input {
+        border-radius: 4px;
         border: none;
         border-bottom: 2px solid #5a6f09;
         outline: none;
-        color:#333333;
+        color:#93ad19;
         transition: border-bottom-color 0.3s ease-in-out;            
         height: 30px;
-        background-color: #93ad19;
+        background-color: white;
         font-size: 18px;
         color-scheme: dark;
         font-weight: 700;
@@ -144,23 +146,22 @@ option:hover {
 
 .submit-container input {
     background-color: white;
-    padding-block:0.8em;
+    padding-block:0.4em;
     padding-inline: 2em;
     font-size: 18px;
     font-weight: 800;
     font-family: "Open Sans", sans-serif;
     border-radius: 50px;
-    border:none;
-    color:#37420c;
-    transition: ease-in-out 0.6s;
-    margin-top: 1em;
+    border: 1px solid #93ad19;
+    color:#93ad19;
+    transition: ease-in-out 0.4s;
+    margin-top: 0px;
 }
 
 .submit-container input:hover {
     background-color: #5a6f09;
     color:white;
     cursor: pointer;
-    border:none;
 }
 
 label, legend, span, input {
@@ -296,8 +297,8 @@ label, legend, span, input {
     border: 1px solid #333333;
     border-radius: 4px;
     cursor: pointer;
-    color:#333333;
-  }
+    color:#93ad19;
+}
   
   .custom-selector__options {
     position: absolute;
@@ -317,7 +318,7 @@ label, legend, span, input {
   }
   
 #start-date, #birth-date {
-    color:#333333;
+    color:#93ad19;
 }
 
   .custom-selector__option {
