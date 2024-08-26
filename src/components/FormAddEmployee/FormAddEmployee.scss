@@ -49,7 +49,7 @@ form {
         border: none;
         border-bottom: 2px solid #5a6f09;
         outline: none;
-        color:#93ad19;
+        color:#5a6f09;
         transition: border-bottom-color 0.3s ease-in-out;            
         height: 26px;
         background-color: white;
@@ -77,7 +77,7 @@ form {
         border: none;
         border-bottom: 2px solid #5a6f09;
         outline: none;
-        color:#93ad19;
+        color:#5a6f09;
         transition: border-bottom-color 0.3s ease-in-out;            
         height: 30px;
         background-color: white;
@@ -153,7 +153,7 @@ option:hover {
     font-family: "Open Sans", sans-serif;
     border-radius: 50px;
     border: 1px solid #93ad19;
-    color:#93ad19;
+    color:#5a6f09;
     transition: ease-in-out 0.4s;
     margin-top: 0px;
 }
@@ -191,18 +191,18 @@ label, legend, span, input {
       color: white;
   
       &:hover {
-        background-color: #93ad19;
+        background-color: #5a6f09;
         color: white;
         cursor: pointer;
       }
   
       &--is-focused {
-        background-color: #93ad19;
+        background-color: #5a6f09;
         color: white;
       }
   
       &--is-selected {
-        background-color: #93ad19;
+        background-color: #5a6f09;
         color:#333333;
     }
     }
@@ -297,7 +297,7 @@ label, legend, span, input {
     border: 1px solid #333333;
     border-radius: 4px;
     cursor: pointer;
-    color:#93ad19;
+    color:#5a6f09;
 }
   
   .custom-selector__options {
@@ -318,7 +318,7 @@ label, legend, span, input {
   }
   
 #start-date, #birth-date {
-    color:#93ad19;
+    color:#5a6f09;
 }
 
   .custom-selector__option {
@@ -329,7 +329,7 @@ label, legend, span, input {
   }
   
   .custom-selector__option:hover {
-    background-color: #93ad19;
+    background-color: #5a6f09;
     color:#333333;
   }
   

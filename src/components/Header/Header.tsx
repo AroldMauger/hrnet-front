@@ -7,16 +7,16 @@ const Header: FC = () => {
 
   return (
     <header>
-      {location.pathname === "/" ? (
+      {location.pathname === "/hrnet-front/" ? (
         <>
         <h1>HRNET</h1>
           <img src="logo.webp" alt="logo de l'entreprise HRNET"/>
-          <NavLink to="/employee-list">View Current Employees</NavLink>
+          <NavLink to="/hrnet-front/employee-list">View Current Employees</NavLink>
         </>
-      ) : location.pathname === "/employee-list" ? (
+      ) : location.pathname === "/hrnet-front/employee-list" ? (
         <>
         <img src="logo.webp" alt="logo de l'entreprise HRNET"/>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/hrnet-front/">Home</NavLink>
         </>
       ) : null}
     </header>

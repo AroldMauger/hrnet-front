@@ -24,11 +24,11 @@ const router = createBrowserRouter([
     errorElement: <NotFound404/>, 
     children :[
       {
-        path: "/",
+        path: "/hrnet-front",
         element: <FormAddEmployee/>
       },
       {
-        path: "/employee-list",
+        path: "/hrnet-front/employee-list",
         element: <EmployeeList/>
       },
     ],

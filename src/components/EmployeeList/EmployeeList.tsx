@@ -31,7 +31,7 @@ const EmployeeList: React.FC = () => {
       sortable: true
     },
     {
-      name: 'Date of Birth',
+      name: 'Birthdate',
       selector: (employee: Employee) => employee.dateOfBirth,
       sortable: true
     },
