@@ -52,12 +52,12 @@ Pour installer et exécuter le projet localement, suivez ces étapes :
 
   ```bash
   cd hrnet-front
-
+  ``` 
 3. Installez les dépendances :
 
   ```bash
   npm install
-
+  ```
 ## Utilisation
 
 ### Développement
@@ -65,3 +65,4 @@ Pour démarrer le projet en mode développement, entrez la commande suivante dan
 
   ```bash
   npm run dev
+  ```
