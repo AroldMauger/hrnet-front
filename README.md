@@ -1,30 +1,67 @@
-# React + TypeScript + Vite
+# Application Frontend HRnet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue dans l'application Frontend HRnet. Ce projet permet aux administrateurs de l'entreprise HRNET d'ajouter des informations importantes concernant ses employés et de les afficher dans un tableau de données filtrable. Codé en React et TypeScript, le projet est déployé sur GitHub Pages.
 
-Currently, two official plugins are available:
+## Table des matières
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Démo](#démo)
+- [Fonctionnalités](#fonctionnalités)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Utilisation](#utilisation)
 
-## Expanding the ESLint configuration
+## Démo
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Vous pouvez voir la démo en ligne de l'application Frontend HRnet ici :
 
-- Configure the top-level `parserOptions` property like this:
+[Démo Frontend HRnet](https://aroldmauger.github.io/hrnet-front/)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Fonctionnalités
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **Formulaire d'ajout d'employé** : Un formulaire qui permet aux utilisateurs de saisir les informations d'un nouvel employé. Le formulaire utilise React-Hook-Form pour la validation et la gestion des données.
+- **Données persistantes des employés** : Les informations des employés sont stockées dans Redux, et Redux Persist garantit que les données sont conservées même après un rafraîchissement de la page.
+- **Liste des employés** : Un tableau de données qui affiche les employés actuels avec des capacités de tri, de pagination et de recherche. Le tableau de données est propulsé par `react-data-table-component`.
+- **Intégration de plugin personnalisé** : Le projet intègre un plugin personnalisé appelé `react-selector-by-ar-mauger`, qui améliore l'interface utilisateur avec des listes déroulantes personnalisées.
+
+## Technologies
+
+Ce projet utilise les technologies suivantes :
+
+- **React** : "^18.3.1"
+- **TypeScript** : "^5.2.2"
+- **Redux** : "^5.0.1"
+- **React-Redux** : "^9.1.2"
+- **Redux Persist** : "^6.0.0"
+- **React-Hook-Form** : "^7.52.1"
+- **React-Data-Table-Component** : "^7.6.2"
+- **React Router Dom** : "^6.25.1"
+- **Sass** : "^1.77.8"
+- **Vite** : "^5.3.4"
+
+## Installation
+
+Pour installer et exécuter le projet localement, suivez ces étapes :
+
+1. Clonez le dépôt :
+
+   ```bash
+   git clone https://github.com/aroldmauger/hrnet-front.git
+
+
+2. Naviguez dans le répertoire du projet :
+
+  ```bash
+  cd hrnet-front
+
+3. Installez les dépendances :
+
+  ```bash
+  npm install
+
+## Utilisation
+
+### Développement
+Pour démarrer le projet en mode développement, entrez la commande suivante dans votre terminal :
+
+  ```bash
+  npm run dev

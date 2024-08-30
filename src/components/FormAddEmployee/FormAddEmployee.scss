@@ -316,6 +316,10 @@ label, legend, span, input {
     margin: 0;
     list-style: none;
   }
+  /* Cible l'icône du calendrier dans les navigateurs basés sur WebKit */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(80%) sepia(80%) saturate(500%) hue-rotate(90deg);
+  }
   
 #start-date, #birth-date {
     color:#5a6f09;
